@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Title</title>
+        <meta name="description" content="Title">
+    </head>
+    <body>
+        <div id="app">
+            <main id="main">
+                <form id="selectForm">
+                    <select name="selectList" id="selectValue">
+                        <option value="opt1">ID</option>
+                        <option value="opt2">名前</option>
+                        <option value="opt3">会社名</option>
+                        <option value="opt4">部署</option>
+                        <option value="opt5">役職</option>
+                    </select>
+                    <div><input type="text"></div>
+                    <button @click="searchButton()">検索</button>
+                </form>
+                <table id="table">
+                    <thead>
+                        <tr class="tr">
+                            <th class="th"><button @click="sortBy('id')">ID</button></th>
+                            <th class="th"><button @click="sortBy('name')">名前</button></th>
+                            <th class="th"><button @click="sortBy('company')">会社名</button></th>
+                            <th class="th"><button @click="sortBy('division')">部署</button></th>
+                            <th class="th"><button @click="sortBy('title')">役職</button></th>
+                        </tr>
+                        <tr v-for="(user,index) in sort_users" :key="user.id">
+                            <td>{{user.id}}</td>
+                            <td>{{user.name}}</td>
+                            <td>{{user.company}}</td>
+                            <td>{{user.division}} </td>
+                            <td>{{user.title}}</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+                <div class="newData">
+                    <p class="newRegi">新規情報追加</p>
+                    <div class="form">
+                        <form method="get" class="formData" onsubmit="return check2()">
+                            <p id="pid1">名前
+                        <input id="newname1" type="text" name="newname1"  class="boxColor" placeholder="名前"></p>
+                            <div id="listName1"></div>
+                            <p>会社名
+                        <input id="newname2" type="text" name="newname2"   class="boxColor" placeholder="会社名"></p>
+                            <div id="listName2"></div>
+                            <p>部署
+                        <input id="newname3" type="text" name="newname3"  class="boxColor" placeholder="部署"></p>
+                            <div id="listName3"></div>
+                            <p>役職
+                        <input id="newname4" type="text" name="newname4"  class="boxColor" placeholder="役職"></p>
+                            <div id="listName4"></div>
+                            <p><input type="button" onclick="buttonClick()" value="作成" id="registerBtn"   ></p>
+                        </form>
+                    </div>
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.2.29/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="card.vue"></script>
+</html>
+
+
+
+
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid;
+    }
+
+    .th {
+        background-color: #1ce9d8;
+        width: 150px;
+    }
+</style>
