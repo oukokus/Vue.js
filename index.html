@@ -9,7 +9,7 @@
     <body>
         <div id="app">
             <main id="main">
-                <form id="selectForm">
+                <div id="selectForm">
                     <select name="selectList" id="selectValue">
                         <option value="opt1">ID</option>
                         <option value="opt2">名前</option>
@@ -17,11 +17,11 @@
                         <option value="opt4">部署</option>
                         <option value="opt5">役職</option>
                     </select>
-                    <div><input type="text"></div>
+                    <div><input type="text" v-model="search"></div>
                     <button @click="searchButton()">検索</button>
-                </form>
+                </div>
                 <table id="table">
-                    <thead>
+                    <thead id="thead">
                         <tr class="tr">
                             <th class="th"><button @click="sortBy('id')">ID</button></th>
                             <th class="th"><button @click="sortBy('name')">名前</button></th>
@@ -37,7 +37,6 @@
                             <td>{{user.title}}</td>
                         </tr>
                     </thead>
-                    <tbody id="tbody"></tbody>
                 </table>
                 <div class="newData">
                     <p class="newRegi">新規情報追加</p>
@@ -55,19 +54,15 @@
                             <p>役職
                         <input id="newname4" type="text" name="newname4"  class="boxColor" placeholder="役職"></p>
                             <div id="listName4"></div>
-                            <p><input type="button" onclick="buttonClick()" value="作成" id="registerBtn"   ></p>
+                            <p><input type="button" @click="buttonClick()" value="作成" id="registerBtn"   ></p>
                         </form>
                     </div>
             </main>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@3.2.29/dist/vue.global.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="card.vue"></script>
+        <script src="card.js"></script>
 </html>
-
-
-
-
 <style>
     table,
     th,
