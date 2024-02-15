@@ -52,27 +52,32 @@ Vue.createApp({
 
       if (this.search_btn != "") {
         let selectValue = document.getElementById("selectValue").value;
-        if (this.search_btn == "opt1") {
+        if (selectValue == "opt1") {
+          this.search_btn = "";
           return this.users.filter((user) => {
             return user.id.toString().includes(this.search.trim());
           });
         }
-        if (this.search_btn == "opt2") {
+        if (selectValue == "opt2") {
+          this.search_btn = "";
           return this.users.filter((user) => {
             return user.name.includes(this.search.trim());
           });
         }
-        if (this.search_btn == "opt3") {
+        if (selectValue == "opt3") {
+          this.search_btn = "";
           return this.users.filter((user) => {
             return user.company.includes(this.search.trim());
           });
         }
-        if (this.search_btn == "opt4") {
+        if (selectValue == "opt4") {
+          this.search_btn = "";
           return this.users.filter((user) => {
             return user.division.includes(this.search.trim());
           });
         }
-        if (this.search_btn == "opt5") {
+        if (selectValue == "opt5") {
+          this.search_btn = "";
           return this.users.filter((user) => {
             return user.title.includes(this.search.trim());
           });

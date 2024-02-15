@@ -5,22 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Title</title>
         <meta name="description" content="Title">
-        
     </head>
     <body>
         <div id="app">
             <main id="main">
                 <div id="selectForm">
                     <select name="selectList" id="selectValue">
-                        <option value="opt1" >ID</option>
-                        <option value="opt2" >名前</option>
-                        <option value="opt3" >会社名</option>
+                        <option value="opt1">ID</option>
+                        <option value="opt2">名前</option>
+                        <option value="opt3">会社名</option>
                         <option value="opt4">部署</option>
                         <option value="opt5">役職</option>
                     </select>
                     <div><input type="text" v-model="search"></div>
-                    <button @click="searchButton()" >検索</button>
-                  
+                    <button @click="searchButton()">検索</button>
                 </div>
                 <table id="table">
                     <thead id="thead">
@@ -39,7 +37,6 @@
                             <td>{{user.title}}</td>
                         </tr>
                     </thead>
-                  
                 </table>
                 <div class="newData">
                     <p class="newRegi">新規情報追加</p>
@@ -66,8 +63,6 @@
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="card.js"></script>
 </html>
-
-
 <style>
     table,
     th,
