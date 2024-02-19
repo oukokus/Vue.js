@@ -41,27 +41,25 @@
                 <div class="newData">
                     <p class="newRegi">新規情報追加</p>
                     <div class="form">
-                        <form method="get" class="formData" onsubmit="return check2()">
-                            <p id="pid1">名前
-                        <input id="newname1" type="text" name="newname1"  class="boxColor" placeholder="名前"></p>
+                        <form method="get" class="formData" >
+                            <p id="pid1">名前<input id="newname1" type="text" v-model="newname01"  class="boxColor" placeholder="名前"></p>
                             <div id="listName1"></div>
-                            <p>会社名
-                        <input id="newname2" type="text" name="newname2"   class="boxColor" placeholder="会社名"></p>
+                            <p>会社名<input id="newname2" type="text" v-model="newname02"   class="boxColor" placeholder="会社名"></p>
                             <div id="listName2"></div>
-                            <p>部署
-                        <input id="newname3" type="text" name="newname3"  class="boxColor" placeholder="部署"></p>
+                            <p>部署<input id="newname3" type="text" v-model="newname03"  class="boxColor" placeholder="部署"></p>
                             <div id="listName3"></div>
-                            <p>役職
-                        <input id="newname4" type="text" name="newname4"  class="boxColor" placeholder="役職"></p>
+                            <p>役職<input id="newname4" type="text" v-model="newname04"  class="boxColor" placeholder="役職"></p>
                             <div id="listName4"></div>
                             <p><input type="button" @click="buttonClick()" value="作成" id="registerBtn"   ></p>
                         </form>
                     </div>
+                </div>
             </main>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@3.2.29/dist/vue.global.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="card.js"></script>
+    </body>
 </html>
 <style>
     table,
