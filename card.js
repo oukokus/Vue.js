@@ -96,21 +96,16 @@ Vue.createApp({
         }
       }
       //実務課題3
+      //tdタグを一つにまとめられる
+      //insertajustHTMLを使う
       if (this.btn != "") {
-        let trClass = document.querySelectorAll(".trClass");
         let getTable = document.getElementById("table");
         let newRow = getTable.insertRow(-1);
-        let trc = document.createElement("tr");
         let td1 = document.createElement("td");
         let td2 = document.createElement("td");
         let td3 = document.createElement("td");
         let td4 = document.createElement("td");
         let td5 = document.createElement("td");
-        td1.className = "td1";
-        td2.className = "td2";
-        td3.className = "td3";
-        td4.className = "td4";
-        td5.className = "td5";
         let newname1 = document.getElementById("newname1").value;
         let newname2 = document.getElementById("newname2").value;
         let newname3 = document.getElementById("newname3").value;
